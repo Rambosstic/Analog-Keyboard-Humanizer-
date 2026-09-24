@@ -11,8 +11,6 @@ Turn an analog keyboard's left-stick output into more natural, adjustable contro
 - A USB data cable from the adapter's **USB-C port to a Windows PC**. The keyboard plugs into the adapter's **USB-A host port**.
 - **Microsoft Edge or Google Chrome** for the included HTML tuner. This guide uses the browser's Web Serial connection.
 
-Start with a direct PC connection. Other hosts and intermediary devices are not part of this beginner setup.
-
 ## 1. Make the keyboard's four keys control its left stick
 
 Set this up in your keyboard's own software *before* moving the keyboard to the adapter. Select its Gamepad/XInput mode, assign analog left-stick directions, and save an onboard profile:
