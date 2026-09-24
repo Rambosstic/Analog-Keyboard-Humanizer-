@@ -6,7 +6,7 @@ Turn an analog keyboard's left-stick output into more natural, adjustable contro
 
 ## What you need
 
-- An analog keyboard that can output a real **left stick in Gamepad/XInput mode** and save that mapping for use without its desktop software. Four ordinary digital WASD keys do not become pressure-sensitive just by connecting this adapter.
+- An analog keyboard that can output a real **left stick in Gamepad/XInput mode** and save that mapping for use without its desktop software. The gamepad mode must output as Xinput/Xbox Controller. Direct input or other output modes are not supported.
 - One supported adapter: **Adafruit Feather RP2040 USB Host** or **Waveshare RP2350-USB-A**.
 - A USB data cable from the adapter's **USB-C port to a Windows PC**. The keyboard plugs into the adapter's **USB-A host port**.
 - **Microsoft Edge or Google Chrome** for the included HTML tuner. This guide uses the browser's Web Serial connection.
