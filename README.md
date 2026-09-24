@@ -19,12 +19,12 @@ Set this up in your keyboard's own software *before* moving the keyboard to the 
 
 | Key | Left-stick direction |
 | --- | --- |
-| **E** | Up / forward |
-| **S** | Left |
-| **D** | Down / backward |
-| **F** | Right |
+| **W** | Up / forward |
+| **A** | Left |
+| **S** | Down / backward |
+| **D** | Right |
 
-This beginner guide covers a keyboard that already sends an analog XInput left stick. ESDF is a recommended example, not a setting hard-coded by the tuner: the adapter receives the keyboard's stick output. Check that light and deep presses produce different stick positions, not just on/off movement.
+This beginner guide covers a keyboard that already sends an analog XInput left stick. WASD is an example, not a setting hard-coded by the tuner: the adapter receives the keyboard's stick output. Check that light and deep presses produce different stick positions, not just on/off movement.
 
 ## 2. Flash the matching adapter firmware
 
@@ -35,7 +35,7 @@ When downloads are available, choose the package whose name exactly matches your
    - **Feather RP2040 USB Host:** hold **BOOT**, tap **RESET**, and release BOOT when the **RPI-RP2** drive appears. [Adafruit's board guide](https://learn.adafruit.com/adafruit-feather-rp2040-with-usb-type-a-host?view=all)
    - **Waveshare RP2350-USB-A:** hold **BOOT** while reconnecting USB-C, or hold BOOT and tap **RESET**; release RESET first, then BOOT. A removable boot drive appears. [Waveshare's board guide](https://www.waveshare.com/wiki/RP2350-USB-A)
 3. Copy **only the .uf2 for your exact board** to that removable drive. The drive disappearing and the adapter restarting are normal.
-4. Plug the configured keyboard into the adapter's **USB-A host port**. With the adapter connected directly to the PC, confirm that moving ESDF moves a left stick on the resulting controller.
+4. Plug the configured keyboard into the adapter's **USB-A host port**. With the adapter connected directly to the PC, confirm that moving WASD moves a left stick on the resulting controller.
 
 Do not copy the HTML file to the bootloader drive. It stays on your PC.
 
@@ -54,7 +54,7 @@ Changes you make while linked take effect immediately in the adapter's working m
 
 ## 4. Tune one thing at a time
 
-Start with **Reset All Values** and move ESDF slowly, then in rolls. Add one effect, compare it with Bypass, and keep only what feels helpful. Some controls are experimental and can add noticeable delay. Reset All changes working values but does not save them until you choose **Save to device**.
+Start with **Reset All Values** and move WASD slowly, then in rolls. Add one effect, compare it with Bypass, and keep only what feels helpful. Some controls are experimental and can add noticeable delay. Reset All changes working values but does not save them until you choose **Save to device**.
 
 The descriptions below use the labels and movement wording shown by the matching tuner's Feel-capable interface. **Details** in the tuner explain the advanced controls further.
 
@@ -112,7 +112,7 @@ Response has model-specific Advanced controls. Thumb Emulation has Simple and Ad
 
 ## If something does not connect
 
-- Confirm that the keyboard is in its analog **Gamepad/XInput** mode and that its ESDF left-stick mapping is saved onboard.
+- Confirm that the keyboard is in its analog **Gamepad/XInput** mode and that its WASD left-stick mapping is saved onboard.
 - Confirm that the keyboard is in the adapter's **USB-A** port and the adapter's **USB-C** data cable goes directly to the PC.
 - Use Edge or Chrome, open the HTML from the **same package** as the flashed firmware, and grant serial access only to the Humanizer port you identify.
 - If the adapter is already in COM mode, use that route rather than trying to trigger the mode switch again.
