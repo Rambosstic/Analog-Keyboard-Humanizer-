@@ -7,9 +7,9 @@ Turn an analog keyboard's left-stick output into more natural, adjustable contro
 ## What you need
 
 - An analog keyboard that can output a real **left stick in Gamepad/XInput mode** and save that mapping for use without its desktop software. The gamepad mode must output as Xinput/Xbox Controller. Direct input or other output modes are not supported.
-- One supported adapter: **Adafruit Feather RP2040 USB Host** or **Waveshare RP2350-USB-A**.
+- One supported adapter: [**Adafruit Feather RP2040 USB Host**](https://www.adafruit.com/product/5723) or [**Waveshare RP2350-USB-A**](https://www.waveshare.com/rp2350-usb-a.htm).
 - A USB data cable from the adapter's **USB-C port to a Windows PC**. The keyboard plugs into the adapter's **USB-A host port**.
-- **Microsoft Edge or Google Chrome** for the included HTML tuner. This guide uses the browser's Web Serial connection.
+- **Microsoft Edge, Google Chrome, or any Chromium based browser** for the included HTML tuner.
 
 ## 1. Make the keyboard's four keys control its left stick
 
