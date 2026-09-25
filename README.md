@@ -116,7 +116,3 @@ Response has model-specific Advanced controls. Thumb Emulation has Simple and Ad
 - If the adapter is already in COM mode, use that route rather than trying to trigger the mode switch again.
 - If you are unsure which controller or port is yours, disconnect other controllers and retry identification. Do not guess from a numbered XInput slot.
 
-## Scope
-
-This is an external USB-host adapter, not keyboard firmware. It does not create analog depth that the keyboard does not report. It does not change unrelated controls or make a keyboard appear as an authenticated Xbox One/Series controller. This first setup and tuner workflow is for Windows PCs and the keyboard's native Gamepad/XInput left-stick path. Advanced raw-HID integrations are outside this beginner guide.
-
