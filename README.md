@@ -28,9 +28,9 @@ This beginner guide covers a keyboard that already sends an analog XInput left s
 
 When downloads are available, choose the package whose name exactly matches your board. Unzip it. Each board package contains one matching **.uf2** firmware file and **Analog Gamepad Helper.html**; keep them together. Keep your previous known-good UF2 if you have one.
 
-1. Connect the adapter's **USB-C device port** to the PC with a data-capable cable.
+1. Use a data-capable cable between the adapter's **USB-C device port** and the PC. Connect it as described for your board below.
 2. Enter the board's UF2 bootloader:
-   - **Feather RP2040 USB Host:** hold **BOOT**, tap **RESET**, and release BOOT when the **RPI-RP2** drive appears. [Adafruit's board guide](https://learn.adafruit.com/adafruit-feather-rp2040-with-usb-type-a-host?view=all)
+   - **Feather RP2040 USB Host:** with USB-C unplugged, hold **BOOT** while connecting it to the PC; keep holding until the **RPI-RP2** drive appears. If already connected, hold **BOOT**, tap **RESET**, and release BOOT when the drive appears. [Adafruit's board guide](https://learn.adafruit.com/adafruit-feather-rp2040-with-usb-type-a-host/pinouts)
    - **Waveshare RP2350-USB-A:** hold **BOOT** while reconnecting USB-C, or hold BOOT and tap **RESET**; release RESET first, then BOOT. A removable boot drive appears. [Waveshare's board guide](https://www.waveshare.com/wiki/RP2350-USB-A)
 3. Copy **only the .uf2 for your exact board** to that removable drive. The drive disappearing and the adapter restarting are normal.
 4. Plug the configured keyboard into the adapter's **USB-A host port**. With the adapter connected directly to the PC, confirm that moving WASD moves a left stick on the resulting controller.
