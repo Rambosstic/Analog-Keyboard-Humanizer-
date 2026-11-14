@@ -99,13 +99,16 @@ you to another browser or a different copy of the HTML file.
 
 ### 4. Find your feel
 
+On your first visit, Studio starts with **Clean Slate**, so there's no need to
+reset anything before experimenting. When you come back, it restores your last
+browser setup; linking still lets you choose the adapter's settings if they differ.
+
 Settings take effect while you're linked, so you can adjust a slider and try
 the movement immediately. A useful first experiment is:
 
-1. Start with **Reset All Values** for a clean starting point.
-2. Choose **Exponential**, then try **10% Response** and **10% Return**.
-3. Try quick presses, gradual releases, and rolling between neighboring keys.
-4. Compare **Phase-Aware** at the same values, then adjust to taste.
+1. Choose **Exponential**, then try **10% Response** and **10% Return**.
+2. Try quick presses, gradual releases, and rolling between neighboring keys.
+3. Compare **Phase-Aware** at the same values, then adjust to taste.
 
 Those values are just a starting point. More smoothing makes movement more
 gradual and takes longer to follow your changes.
@@ -185,8 +188,14 @@ Humanizer processes it.
 
 - **Save to device** stores your current settings on the adapter and restarts it.
 - **Exit Without Saving** returns to the last saved device settings.
-- **Profiles** lets you save and load settings files, share them, or keep named
-  presets in your browser.
+- **Browser presets** in Profiles are handy for keeping named setups in the
+  same browser on the same computer. Clearing browser data can remove them,
+  and they may not follow you to another browser or copy of Studio.
+- **JSON config files** are your portable backups. Under **Profiles → Config
+  files**, choose **Save config** to pick a filename and location. Keep a JSON
+  copy of any setup you want to keep, even if you also save it in your browser.
+  You can back it up alongside your other files, move it to another computer,
+  or share it with friends and other users. Choose **Load config** to open one.
 
 Loading a profile and saving it to the adapter are separate steps. Once you've
 found a setup you like, choose **Save to device** to keep it after unplugging.
