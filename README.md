@@ -113,7 +113,7 @@ the movement immediately. A useful first experiment is:
 Those values are just a starting point. More smoothing makes movement more
 gradual and takes longer to follow your changes.
 
-For a ready-made starting point, load **Profiles → Suggested Settings Basic**:
+For a ready-made starting point, load **Profiles → Suggested Starting Point**:
 
 | Setting | Value |
 | --- | --- |
