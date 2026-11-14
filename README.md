@@ -211,9 +211,15 @@ If Studio won't link, try Chrome or Edge and make sure the HTML and firmware
 came from the same release package. Close other applications using the adapter's
 serial port before trying again.
 
-For unusual movement, **Diagnostics → Record stick movement** saves a recording
-you can attach to an issue. Include your board, keyboard, release version,
-settings, and a short description of what you expected versus what happened.
+Found a bug? Open **Diagnostics → Report a bug** to visit our public
+[GitHub Issues page](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/issues).
+Choose **New issue**, describe what happened and what you expected, and include
+your board, keyboard, build version, and settings if known.
+
+**A recording is optional.** For movement problems, **Diagnostics → Record
+stick movement** can save a diagnostic JSON file. Drag that saved file into
+your issue's description or use GitHub's attachment button. You can report a
+problem without a recording; Studio doesn't upload anything automatically.
 
 Humanizer is still being refined. Feedback from real keyboards and real play
 helps shape where it goes next.
