@@ -22,7 +22,7 @@ own software, then save that setup to the keyboard before using Humanizer.
 
 *Board packages are coming to Releases. Each package will include the firmware
 and its matching Humanizer Studio configurator. This repository is the home for
-downloads and user guides; firmware source code is not distributed here.*
+downloads and user guides.*
 
 ## What you'll need
 
