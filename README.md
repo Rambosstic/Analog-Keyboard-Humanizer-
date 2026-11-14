@@ -14,6 +14,9 @@ It works with the keyboard's existing **XInput left-stick output**. Your analog
 key depth still matters. Buttons, triggers, and the right stick pass through
 unchanged.
 
+Set up your preferred button layout and analog output curve in your keyboard's
+own software, then save that setup to the keyboard before using Humanizer.
+
 **[Releases and downloads](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases)** ·
 **[Report a problem or share feedback](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/issues)**
 
