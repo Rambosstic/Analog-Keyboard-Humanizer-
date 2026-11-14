@@ -2,27 +2,14 @@
 
 Turn an analog keyboard's left-stick output into more natural, adjustable controller movement. The adapter keeps your actual key depth and changes only the left stick. Buttons, triggers, and the right stick pass through unchanged.
 
-> **Downloads are not published yet.** This repository is the public guide and download home. Board packages will appear under [Releases](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases), with a separate ZIP for each supported board. Choose your board's package, not GitHub's **Code → Download ZIP** or automatic **Source code** archives; those contain this repository's documentation, not installable firmware.
-
-## Humanizer Studio
-
-The included **Analog Gamepad Helper.html** now opens **Humanizer Studio**: a local tuner with separate Response, Return, Circularity, Angular Offset, Arc, Wander, and Thumb Emulation pages. **All Tunings** puts those controls on one page; **Profiles** and **Diagnostics** have their own sections.
-
-- Compare incoming and tuned movement using **Processed only**, **Overlay**, or **Side by side** Live Preview.
-- Read stick X/Y, magnitude, and angle; expand the preview or use a resizable **Pop out** window.
-- Customize each trace's color, line/dash/dot style, thickness, opacity, and trail fade.
-- Shape smoothing with Global, three-point Simple deflection, or an editable Advanced deflection curve.
-- Save and share JSON config files, or keep named presets in your browser.
-- Use **Press & release timing** and paired movement recordings to inspect what your settings do.
-
-**Thumb Emulation is the sole optional Thumb helper.** Thumb Motion and Inner Gate have been removed. Simple mode offers one Strength slider; Advanced keeps six additional controls for those who want them.
+> **Downloads are not published yet.** This page is the getting-started guide. When the board packages are ready, they will appear under [Releases](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases). Do not use a firmware file meant for the other board.
 
 ## What you need
 
 - An analog keyboard that can output a real **left stick in Gamepad/XInput mode** and save that mapping for use without its desktop software. The gamepad mode must output as Xinput/Xbox Controller. Direct input or other output modes are not supported.
 - One supported adapter: [**Adafruit Feather RP2040 USB Host**](https://www.adafruit.com/product/5723) or [**Waveshare RP2350-USB-A**](https://www.waveshare.com/rp2350-usb-a.htm).
 - A USB data cable from the adapter's **USB-C port to a Windows PC**. The keyboard plugs into the adapter's **USB-A host port**.
-- **Microsoft Edge or Google Chrome on Windows** for the included HTML tuner.
+- **Microsoft Edge, Google Chrome, or any Chromium based browser** for the included HTML tuner.
 
 ## 1. Make the keyboard's four keys control its left stick
 
@@ -35,7 +22,7 @@ Set this up in your keyboard's own software *before* moving the keyboard to the 
 | **S** | Down / backward |
 | **D** | Right |
 
-This beginner guide covers a keyboard that already sends an analog XInput left stick. WASD is an example; ESDF or another four-key layout works the same way when mapped in the keyboard's software. The layout is not hard-coded by the tuner: the adapter receives the keyboard's stick output. Check that light and deep presses produce different stick positions, not just on/off movement.
+This beginner guide covers a keyboard that already sends an analog XInput left stick. WASD is an example, not a setting hard-coded by the tuner: the adapter receives the keyboard's stick output. Check that light and deep presses produce different stick positions, not just on/off movement.
 
 ## 2. Flash the matching adapter firmware
 
@@ -52,7 +39,7 @@ Do not copy the HTML file to the bootloader drive. It stays on your PC.
 
 ## 3. Open the tuner
 
-Open **Analog Gamepad Helper.html from the same board package** in Edge or Chrome. It is a local file; it does not need a website or account.
+Open the **Analog Gamepad Helper.html from the same board package** in Edge or Chrome. It is a local file; it does not need a website or account.
 
 1. Click **Link to hardware**.
 2. If the adapter is currently a gamepad, follow the guided left-stick movement check to identify it. The browser may briefly disconnect that controller to switch it into configuration (COM) mode. Select the serial port only when the browser asks.
@@ -67,7 +54,7 @@ Changes you make while linked take effect immediately in the adapter's working m
 
 Start with **Reset All Values** and move WASD slowly, then in rolls. Add one effect, compare it with Bypass, and keep only what feels helpful. Some controls are experimental and can add noticeable delay. Reset All changes working values but does not save them until you choose **Save to device**.
 
-The descriptions below follow the current Humanizer Studio controls. **Details** in the tuner explain the advanced controls further.
+The descriptions below use the labels and movement wording shown by the matching tuner's Feel-capable interface. **Details** in the tuner explain the advanced controls further.
 
 ### Response and return
 
@@ -75,36 +62,29 @@ The descriptions below follow the current Humanizer Studio controls. **Details**
 
 **Response Smoothing.** Smooths how the stick follows your key movements. Lower follows sooner; higher moves more gradually but takes longer to catch up. 0 turns Response smoothing off. Used only in Global mode. Both deflection-based modes ignore this value completely. Default: 0%.
 
-**Smoothing Mode.** Global uses one Response Smoothing amount. **Deflection Based · Simple** uses Low, Medium, and Full deflection values. **Deflection Based · Advanced** has ten standard points plus up to ten custom points: click the graph or use **Add point**, drag to adjust, or enter exact values. Custom points can also move between their neighbours or be removed. **Reset Curve** restores the standard curve. Both deflection modes ignore the stored Global value completely; switching back to Global restores its use. These values change timing, not stick reach.
+**Smoothing Mode.** Deflection Based Smoothing replaces the global Response Smoothing value. Its Simple and Advanced points span 0–200%; 0% responds immediately and values from 1–9% scale proportionally. In either deflection-based editor, set smoothing directly for light, medium and full stick movement, or choose the six-point curve for finer control. Lower values follow your keys faster; higher values move more gradually. 0 adds no Response smoothing at that point. The Global slider is not used at all. These values change timing, not stick reach.
 
-Global, deflection-based, and Return smoothing all use **0–100%**, with a true zero. 1% corresponds to a 1 ms nominal smoothing time constant; it is not a fixed pause or a promise to finish moving in 1 ms. The **Advanced Response** Simple/Advanced selection is separate and works with Global or either deflection mode.
+**Return Model.** Chooses the style of movement as the stick comes back toward center. Choose independently from Response: for example, Phase-Aware Response with Exponential Return. Your choices stay selected until you change them. When you turn while easing off, both choices can influence the movement. Default: Exponential.
 
-**Return Model.** Uses the same model selected in Response. Return has its own smoothing amount; there is no separate Return model selector in this build.
+**Return Smoothing.** Smooths the stick moving back toward center, whether you release the keys gradually or all at once. Lower returns sooner; higher returns more gradually. Uses your chosen Return Model, with its own smoothing amount. 0% turns Return smoothing off. Default: 0%.
 
-**Return Smoothing.** Smooths the stick moving back toward center, whether you release the keys gradually or all at once. Lower returns sooner; higher returns more gradually. Uses the Response model, with its own smoothing amount. 0% turns Return smoothing off. Default: 0%.
-
-### Circularity, Angular Offset, Arc, and Wander
+### Motion Character
 
 **Circularity.** Changes how far the stick reaches in diagonal directions. Lower makes the outer edge rounder; higher gives the diagonals more reach, making the edge more square-like. 50 leaves the original shape unchanged. Default: 50%.
 
-
-**Apply Circularity** switches only the outer-edge correction on or off and keeps your slider value. If the keyboard offers square or circular gamepad output, square gives Humanizer the widest adjustment range. Humanizer cannot recover stick reach already removed by the keyboard.
-
 **Maximum Angular Offset.** Varies the stick’s starting direction by up to the angle you choose, to either side of the direction you press. Lower keeps it closer to your pressed direction; higher allows more variation. Range: 0–5°. At 5°, each new starting offset can be up to 5° either way; it is not always 5°. 0° is off. Default: 0°. Degrees describe stick direction, not how far a game camera turns.
 
-**Outward Arc.** Adds a varying bend as the stick moves away from center. Lower allows a smaller bend; higher allows a larger one. The current tuner displays the maximum bend in degrees, up to 5°. The actual bend varies and can be smaller. 0° adds no arc. Default: 0°. This limit describes the new arc, not all movement effects combined.
+**Outward Arc.** Adds a varying bend as the stick moves away from center. Lower allows a smaller bend; higher allows a larger one. 50% allows each new arc to add up to 2.5°; 100% allows up to 5°. The actual bend varies and can be smaller. 0% adds no arc. Default: 0%. These limits describe the new arc, not all movement effects combined.
 
-**Return Arc.** Adds a varying bend as the stick moves back toward center. Lower allows a smaller bend; higher allows a larger one. The current tuner displays the maximum bend in degrees, up to 5°. The actual bend varies and can be smaller. 0° adds no arc. Default: 0°. This limit describes the new arc, not all movement effects combined.
+**Return Arc.** Adds a varying bend as the stick moves back toward center. Lower allows a smaller bend; higher allows a larger one. 50% allows each new arc to add up to 2.5°; 100% allows up to 5°. The actual bend varies and can be smaller. 0% adds no arc. Default: 0%. These limits describe the new arc, not all movement effects combined.
 
 **Wander Amount.** Adds small changes in direction while you hold the keys steady. Lower makes the movement smaller; higher lets the direction wander farther. 0 is off. Default: 0%.
 
 **Wander Speed.** Controls how quickly the direction wanders while you hold the keys steady. Lower makes the changes slower and less frequent. Higher makes them quicker and more frequent. Only has an effect when Wander Amount is above zero. 0% turns wandering off. Default: 0%.
 
-### Advanced Response and Thumb Emulation
+### Customize the feel — Experimental
 
-Response has model-specific **Advanced Response** controls, available under Global and both deflection modes.
-
-On the **Thumb Emulation** page, select **Enable Thumb Emulation** and raise **Strength** to try it. It starts off at 0%. Simple always uses its fixed preset; Advanced restores your six custom values. Strength is shared between modes. **Reset Thumb Emulation** turns it off, restores Strength to 0%, selects Simple, and restores all six defaults without resetting other tuning.
+Response has model-specific Advanced controls. Thumb Emulation has Simple and Advanced modes: **Thumb Strength** is shared, while the timing and shape controls below customize Advanced. The tuner keeps unused mode values for later; only the selected mode affects movement.
 
 **Start Shape — Exponential Response only.** Changes how the stick leaves center. Lower makes it move quickly at first, then ease into the position you’re pressing toward. Higher makes it start gently, then catch up. Default: 50%—matches Simple mode’s start shape.
 
@@ -112,62 +92,21 @@ On the **Thumb Emulation** page, select **Enable Thumb Emulation** and raise **S
 
 **Path Bias — Phase-Aware Response only.** Changes whether the stick cuts across a turn or follows a rounded path. Lower lets it cut closer to center to reach the new direction. Higher favors a rounder turn that stays farther from center. Default: 50%—matches Simple mode’s way of choosing the turning path.
 
-**Strength.** Controls how much Thumb Emulation changes the stick’s movement. Lower follows your key direction and pressure more directly. Higher adds more rounding and distance stabilization during turns, but can respond more slowly to your changes. 0% turns all Thumb assistance off. Default: 0%.
+**Thumb Strength.** Makes turns between key directions flow more like rolling a thumbstick. Lower follows your key changes more directly; higher makes rounder, more gradual turns but may take longer to follow your changes. 0 is off. Default: 0%.
 
-**Turn Connection.** Softens changes in the stick’s direction during a turn. Lower follows a new direction more sharply. Higher makes the change more gradual and rounded, but takes longer to catch up. 0 ms removes this extra direction smoothing. Default: 20 ms—matches the Simple preset.
+**Turn Connection.** Smooths the change from one direction to another during a turn. Lower turns more sharply; higher rounds out the turn but follows your keys more slowly. Default: 20 ms—matches the Simple preset.
 
-**Roll Persistence.** Keeps Thumb assistance active through brief pauses in a turn. Lower ends assistance sooner after the direction stops changing, letting the stick settle onto the position your keys request. Higher connects longer pauses, but can delay settling onto a held position. 0 ms removes this pause allowance. Default: 750 ms—matches the Simple preset.
+**Roll Persistence.** Keeps a turn going through brief pauses between key changes. Lower stops the turning effect sooner; higher connects longer pauses but can take longer to settle into a held direction. Default: 1,500 ms—matches the Simple preset.
 
-**Radius Stability.** Steadies the stick’s distance from center while you turn, helping the path keep a consistent size. Lower follows deeper or lighter key presses sooner. Higher resists changes in distance more strongly. Higher settings strongly favor steady circles: at high Thumb Strength, intentional distance changes can take several seconds to follow. Default: 750 ms—matches the Simple preset.
+**Radius Stability.** Controls how strongly the stick holds its circle size while you keep turning. Lower lets the circle grow or shrink sooner when you press deeper or lighter. Higher resists those changes more strongly. The 3,000 ms default strongly favors steady circles: a deliberate change in circle size can take several seconds to follow. Default: 3,000 ms—matches the Simple preset.
 
-**Circle Radius Compression.** Brings wider turning paths closer to center. Lower preserves more outward reach. Higher pulls wider paths farther inward, leaving more space before the outer edge. 0% turns this extra inward pull off. Default: 25%—matches the Simple preset.
+**Circle Radius Compression.** Makes larger circles smaller, bringing the stick closer to center. Lower keeps more outward reach; higher pulls the circle farther inward. 0 turns this extra inward pull off. Default: 25%—matches the Simple preset.
 
-**Hold Settle.** Eases the stick’s final change in direction after Thumb assistance ends during a pause. Lower aligns with the direction you are holding sooner. Higher makes that final alignment more gradual. 0 ms adds no extra settling. Default: 0 ms—matches the Simple preset.
+**Hold Settle.** Softens the final move into a held direction after a turn ends. Lower settles into that direction sooner; higher eases into it more slowly. 0 adds no extra settling time. Default: 0 ms—matches the Simple preset.
 
-**Full-Deflection Confirmation.** During an assisted turn, checks that an input asking for the outer edge is held long enough before letting the stick move out to it. Lower accepts that input sooner. Higher helps keep brief presses from throwing the stick out to the edge, but makes a sustained full-stick input take longer to follow. 0 ms removes this extra wait. Default: 40 ms—matches the Simple preset.
+**Full-Deflection Confirmation.** Helps prevent the stick from jumping to the outer edge when you briefly press a key all the way down during a turn. Lower accepts full pressure sooner. Higher waits longer to check that you are holding full pressure, so reaching the edge can take longer. 0 adds no waiting time. Default: 80 ms—matches the Simple preset.
 
-## 5. Compare the live previews
-
-While linked in COM mode, Live Preview receives paired incoming and processed stick positions from the adapter.
-
-| View | What it shows |
-| --- | --- |
-| **Processed only** | The stick movement after Humanizer. |
-| **Overlay** | Incoming and tuned paths on the same plot, making their differences easy to see. |
-| **Side by side** | Separate plots and X/Y, magnitude, and angle readouts for incoming and tuned movement. |
-
-**Raw input** means the keyboard's reported stick before Humanizer. It is not a direct measurement of the individual key sensors. **Tuned output** is the processed stick inside the adapter. In COM mode this is serial preview data, not a simultaneous XInput endpoint.
-
-Use **Expand preview** for a larger view or **Pop out** for a separate resizable window. Under **Preview appearance**, each trace has independent **Lines / Dashes / Dots**, color, thickness, and opacity. Trail fade is **1, 5, or 10 seconds**. **Clear trail** removes the visible history; **Reset appearance** restores the display defaults. These controls do not change movement tuning.
-
-The current tuner automatically requests **1 ms COM preview** from compatible firmware. The browser draws at its own refresh rate; 1 ms preview does not mean 1,000 visible frames per second or prove a particular gamepad polling rate.
-
-To compare an effect, keep the same movement and settings, use Overlay or Side by side, then toggle **Bypass Humanizer**. Bypass keeps your chosen effect settings so you can turn processing back on without rebuilding the configuration.
-
-## 6. Save and share profiles
-
-There are three separate ways to keep settings:
-
-| Action | Where it saves | What it does to the adapter |
-| --- | --- | --- |
-| **Save current settings to browser** | A named preset in this browser | Does not save device flash. |
-| **Save config** | A JSON file you can back up or share | Does not save device flash. |
-| **Save to device** | The adapter's persistent storage | Saves the current settings and reboots into controller mode. |
-
-Use **Load config** to open a shared JSON file. Selecting a browser preset or importing a config loads it into Studio and applies it live when linked. Use **Save to device** afterward if you want it to survive power loss.
-
-For portable profiles, create a **Configs** folder beside the HTML and choose it in the save dialog. The browser needs your choice; it does not silently write beside the HTML. If a save dialog is unavailable, the file uses the browser's normal download location.
-
-Supported older profiles are converted when loaded. A removed Thumb Motion or Inner Gate selection becomes off, rather than silently enabling Thumb Emulation. Review any migration notice before saving a new copy; the original imported file is preserved.
-
-## 7. Check timing and record movement
-
-Open **Diagnostics** while linked:
-
-- **Press & release timing:** start centered, press and hold one direction fully, then release when prompted. Separate graphs show incoming and processed magnitude, endpoint markers, and a labeled bracket for the extra time to full magnitude or center.
-- **Record stick movement:** capture paired incoming/processed samples, timing, and current settings to a local JSON file. Use **Stop & Save** to keep it. Recording stops after 60 seconds, on a tuning change, or if the connection is lost.
-
-The timing test measures added settling time inside Humanizer with your current settings. It does not measure total keyboard-to-screen input lag. It uses device sample times, treats 99% magnitude as full and 1% as centered, and checks that each endpoint stays reached for 20 ms without adding that confirmation wait to the result. The test does not change your tuning.
+**Handoff Dip.** Briefly brings the stick closer to center when changing between directions during a turn. Lower makes a smaller dip; higher makes a deeper dip. 0 is off. Default: 0%—matches the Simple preset.
 
 ## If something does not connect
 
@@ -176,3 +115,4 @@ The timing test measures added settling time inside Humanizer with your current 
 - Use Edge or Chrome, open the HTML from the **same package** as the flashed firmware, and grant serial access only to the Humanizer port you identify.
 - If the adapter is already in COM mode, use that route rather than trying to trigger the mode switch again.
 - If you are unsure which controller or port is yours, disconnect other controllers and retry identification. Do not guess from a numbered XInput slot.
+
