@@ -20,8 +20,10 @@ own software, then save that setup to the keyboard before using Humanizer.
 **[Releases and downloads](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases)** ·
 **[Report a problem or share feedback](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/issues)**
 
-*The Waveshare firmware package is coming to Releases. It will include the
-firmware, matching Humanizer Studio configurator, and user guide.*
+**[Download Humanizer v1.0.0 for Waveshare RP2350-USB-A](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases/download/v1.0.0/Humanizer-Studio-v1.0.0-Waveshare-RP2350-USB-A.zip)**
+
+The ZIP includes the firmware, matching Humanizer Studio configurator, and PDF user guide.
+Optional enclosure STL files are a separate download below.
 
 ## What you'll need
 
