@@ -91,11 +91,13 @@ mode. If it's already in COM mode, choose **Already in COM mode — select port*
 If several devices look alike, disconnect the extras so you can select yours
 confidently.
 
-Studio remembers your last setup in the same browser. If there isn't one yet,
-it starts with **Clean Slate**. Linking reads the adapter's current settings
-first. If they differ from your prepared Studio setup, choose **Use adapter
-settings** or **Apply my Studio settings**. Nothing is saved to the adapter's
-flash until you click **Save to device**.
+Studio starts with **Clean Slate** when there is no browser setup yet. A freshly
+flashed adapter with no saved configuration also starts with Clean Slate.
+Whenever you link, Studio automatically loads the adapter's current settings.
+After **Save To Device** and its restart, relinking brings back that saved setup.
+There is no browser-versus-adapter choice dialog. To try a different preset or
+JSON config, load it from **Profiles** after linking. Only **Save To Device**
+keeps your changes on the adapter after unplugging.
 
 Keep a saved config file as a portable backup—browser storage may not follow
 you to another browser or a different copy of the HTML file.
@@ -104,7 +106,7 @@ you to another browser or a different copy of the HTML file.
 
 On your first visit, Studio starts with **Clean Slate**, so there's no need to
 reset anything before experimenting. When you come back, it restores your last
-browser setup; linking still lets you choose the adapter's settings if they differ.
+browser setup until you link; linking automatically loads the adapter's settings.
 
 Settings take effect while you're linked, so you can adjust a slider and try
 the movement immediately. A useful first experiment is:
