@@ -29,9 +29,8 @@ downloads and user guides.*
 - An **analog keyboard with XInput gamepad mode**, capable of saving its
   left-stick mapping onboard. DirectInput and ordinary digital keyboard mode
   aren't supported.
-- Either supported board:
-  - [**Waveshare RP2350-USB-A**](https://www.waveshare.com/rp2350-usb-a.htm)
-  - [**Adafruit Feather RP2040 USB Host**](https://www.adafruit.com/product/5723)
+- A [**Waveshare RP2350-USB-A**](https://www.waveshare.com/rp2350-usb-a.htm).
+  Current builds and setup instructions are for this board.
 - A Windows PC, a USB data cable, and **Chrome or Edge** for the configurator.
 
 The connection is simple:
@@ -64,10 +63,8 @@ that came with the firmware you're installing.
 
 1. Connect the board's USB-C port to your PC using a data-capable cable.
 2. Enter its bootloader:
-   - **Waveshare RP2350-USB-A:** hold **BOOT**, tap and release **RESET**, then
-     release BOOT. You can also hold BOOT while connecting USB-C.
-   - **Adafruit Feather RP2040 USB Host:** hold **BOOT** while connecting
-     USB-C, or hold BOOT and tap RESET if it's already connected.
+   Hold **BOOT**, tap and release **RESET**, then release BOOT.
+   You can also hold BOOT while connecting USB-C.
 3. A removable drive appears. Copy the **`.uf2` for your exact board** onto it.
 4. The drive disappears as the board restarts. That's expected.
 5. Plug your configured keyboard into the board's USB-A host port.
@@ -75,8 +72,7 @@ that came with the firmware you're installing.
 The HTML configurator stays on your PC; it doesn't go onto the bootloader drive.
 Keep a copy of your previous working firmware when updating.
 
-Board instructions: [Waveshare](https://www.waveshare.com/wiki/RP2350-USB-A) ·
-[Adafruit](https://learn.adafruit.com/adafruit-feather-rp2040-with-usb-type-a-host/pinouts)
+Board instructions: [Waveshare RP2350-USB-A](https://www.waveshare.com/wiki/RP2350-USB-A).
 
 </details>
 
@@ -90,14 +86,24 @@ firmware packages; you don't need a printed case to use Humanizer.
 
 ### 3. Open Humanizer Studio
 
-Open **`Analog Gamepad Helper.html`** in Chrome or Edge, then click
-**Link to hardware** and follow the prompts. Studio runs from that local file;
-there's no account to create.
+Open **`Analog Gamepad Helper.html`** in Chrome or Edge. Studio runs from that
+local file; there's no account to create.
 
-The connection guide identifies your adapter and helps switch it into tuning
-mode. If it's already in COM mode, choose **Already in COM mode — select port**.
-If several devices look alike, disconnect the extras so you can select yours
-confidently.
+**First connection:** click **Link To Hardware**. Your browser opens its port
+chooser. Select **Humanizer Studio** (the name may include a COM port number),
+then click **Connect**. Studio checks the adapter's firmware and loads its
+settings before enabling tuning. No stick movement is needed, and other
+controllers can stay connected.
+
+**Next time:** Studio can reconnect automatically to one connected Humanizer
+port you've already allowed. If it hasn't linked, click **Link To Hardware**.
+If multiple matching ports are available, choose the adapter you want. A new
+browser or a different copy of the HTML may ask for permission again.
+
+**After Save To Device:** the adapter restarts, so a brief disconnection is
+expected. Leave Studio open, wait for the board to return, then click
+**Link To Hardware**. Your saved settings load without refreshing the page.
+The same applies after unplugging the board from your PC and reconnecting it.
 
 Studio starts with **Clean Slate** when there is no browser setup yet. A freshly
 flashed adapter with no saved configuration also starts with Clean Slate.
@@ -221,8 +227,9 @@ Some keyboards take a few seconds to initialize; Turtle Beach can take longer
 than Wooting.
 
 If Studio won't link, try Chrome or Edge and make sure the HTML and firmware
-came from the same release package. Close other applications using the adapter's
-serial port before trying again.
+came from the same release package. If the port chooser is empty, check the
+USB data cable and that the board is running the current firmware. Close other
+applications or Studio tabs using its serial port before trying again.
 
 Found a bug? Open **Diagnostics → Report a bug** to visit our public
 [GitHub Issues page](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/issues).
