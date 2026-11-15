@@ -20,9 +20,8 @@ own software, then save that setup to the keyboard before using Humanizer.
 **[Releases and downloads](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases)** ·
 **[Report a problem or share feedback](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/issues)**
 
-*Board packages are coming to Releases. Each package will include the firmware
-and its matching Humanizer Studio configurator. This repository is the home for
-downloads and user guides.*
+*The Waveshare firmware package is coming to Releases. It will include the
+firmware, matching Humanizer Studio configurator, and user guide.*
 
 ## What you'll need
 
@@ -52,9 +51,9 @@ receives that stick movement, so you can use a different key layout if you prefe
 **If your keyboard offers square or circular stick output, choose square.**
 That gives Humanizer's Circularity control the most room to shape the outer edge.
 
-### 2. Install the firmware for your board
+### 2. Install the firmware
 
-Download and unzip the matching board package from **Releases**. Keep its
+Download the latest firmware release from **Releases** and extract the ZIP. Keep its
 `.uf2` firmware and `Analog Gamepad Helper.html` together—use the configurator
 that came with the firmware you're installing.
 
@@ -65,7 +64,7 @@ that came with the firmware you're installing.
 2. Enter its bootloader:
    Hold **BOOT**, tap and release **RESET**, then release BOOT.
    You can also hold BOOT while connecting USB-C.
-3. A removable drive appears. Copy the **`.uf2` for your exact board** onto it.
+3. A removable drive appears. Copy the included **`.uf2` firmware file** onto it.
 4. The drive disappears as the board restarts. That's expected.
 5. Plug your configured keyboard into the board's USB-A host port.
 
@@ -82,39 +81,17 @@ Want to print a case for your **Waveshare RP2350-USB-A**?
 [Download the enclosure STL files](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases/download/enclosure-v2/Waveshare-Humanizer-Enclosure-v2.zip).
 The ZIP contains **Top_v2.stl** (top shell with the logo and B/R markings) and
 **Bottom_v2.stl** (bottom shell). This optional download is separate from the
-firmware packages; you don't need a printed case to use Humanizer.
+firmware package; you don't need a printed case to use Humanizer.
 
 ### 3. Open Humanizer Studio
 
 Open **`Analog Gamepad Helper.html`** in Chrome or Edge. Studio runs from that
 local file; there's no account to create.
 
-**First connection:** click **Link To Hardware**. Your browser opens its port
-chooser. Select **Humanizer Studio** (the name may include a COM port number),
-then click **Connect**. Studio checks the adapter's firmware and loads its
-settings before enabling tuning. No stick movement is needed, and other
-controllers can stay connected.
+Click **Link To Hardware**. If prompted, select **Humanizer Studio** and click
+**Connect**.
 
-**Next time:** Studio can reconnect automatically to one connected Humanizer
-port you've already allowed. If it hasn't linked, click **Link To Hardware**.
-If multiple matching ports are available, choose the adapter you want. A new
-browser or a different copy of the HTML may ask for permission again.
-
-**After Save To Device:** the adapter restarts, so a brief disconnection is
-expected. Leave Studio open, wait for the board to return, then click
-**Link To Hardware**. Your saved settings load without refreshing the page.
-The same applies after unplugging the board from your PC and reconnecting it.
-
-Studio starts with **Clean Slate** when there is no browser setup yet. A freshly
-flashed adapter with no saved configuration also starts with Clean Slate.
-Whenever you link, Studio automatically loads the adapter's current settings.
-After **Save To Device** and its restart, relinking brings back that saved setup.
-There is no browser-versus-adapter choice dialog. To try a different preset or
-JSON config, load it from **Profiles** after linking. Only **Save To Device**
-keeps your changes on the adapter after unplugging.
-
-Keep a saved config file as a portable backup—browser storage may not follow
-you to another browser or a different copy of the HTML file.
+An adapter with no saved configuration starts with **Clean Slate**.
 
 ### 4. Find your feel
 
@@ -132,7 +109,14 @@ the movement immediately. A useful first experiment is:
 Those values are just a starting point. More smoothing makes movement more
 gradual and takes longer to follow your changes.
 
-For a ready-made starting point, load **Profiles → Suggested Starting Point**:
+For a ready-made setup, open **Profiles → Browser Presets → Load A Preset**.
+Under **Built-in presets**, choose **Suggested Starting Point** or
+**Guitar Pandas' Settings**, the author's personal setup. Both are included in
+Studio; you don't need to download a config file. Selecting one loads it.
+
+![Browser Presets with the author's built-in Guitar Pandas' Settings selected](docs/user-guide/screenshots/browser-presets.png)
+
+**Suggested Starting Point** uses these settings:
 
 | Setting | Value |
 | --- | --- |
@@ -144,7 +128,7 @@ For a ready-made starting point, load **Profiles → Suggested Starting Point**:
 | Wander Amount / Speed | 10% each |
 | Thumb Emulation | On, Simple, Strength 5% |
 
-This preset is optional. Load it when you want to try it, then adjust to taste.
+Both presets are optional starting points. Try either one, then adjust to taste.
 
 ### Start fresh whenever you like
 
@@ -156,7 +140,6 @@ defaults, ready for when you choose to use them.
 
 You can load that same starting point from **Profiles → Clean Slate**. It's
 built into Studio and always available, even if you haven't saved any profiles.
-Use **Save to device** if you want to keep this reset after unplugging.
 
 ## A quick tour of the tuning pages
 
@@ -205,7 +188,10 @@ Humanizer processes it.
 
 ## Keep a setup you like
 
-- **Save to device** stores your current settings on the adapter and restarts it.
+- **Save To Device** stores your entire current configuration in the Waveshare's
+  onboard memory, including any changes you've made. Once saved, you can close
+  Studio. The Waveshare keeps using those settings, including after unplugging
+  and reconnecting; the configurator does not need to stay open.
 - **Exit Without Saving** returns to the last saved device settings.
 - **Browser presets** in Profiles are handy for keeping named setups in the
   same browser on the same computer. Clearing browser data can remove them,
@@ -216,8 +202,16 @@ Humanizer processes it.
   You can back it up alongside your other files, move it to another computer,
   or share it with friends and other users. Choose **Load config** to open one.
 
-Loading a profile and saving it to the adapter are separate steps. Once you've
-found a setup you like, choose **Save to device** to keep it after unplugging.
+**Keep a JSON backup of every setup you want to keep.** Browser presets are
+convenient, but clearing browsing data can erase your saved presets. A JSON
+file kept in a safe folder lets you restore your setup or share it with others.
+
+Loading a preset or JSON config does not save it to the Waveshare. Choose
+**Save To Device** when you're happy with the current configuration.
+
+**To change your setup later:** reopen Studio, click **Link To Hardware** if
+it hasn't already linked, make your changes, then click **Save To Device**
+again. You can close Studio once the settings are saved.
 
 ## Need a hand?
 
@@ -234,7 +228,7 @@ applications or Studio tabs using its serial port before trying again.
 Found a bug? Open **Diagnostics → Report a bug** to visit our public
 [GitHub Issues page](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/issues).
 Choose **New issue**, describe what happened and what you expected, and include
-your board, keyboard, build version, and settings if known.
+your keyboard, build version, and settings if known.
 
 **A recording is optional.** For movement problems, **Diagnostics → Record
 stick movement** can save a diagnostic JSON file. Drag that saved file into
