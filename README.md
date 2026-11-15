@@ -80,6 +80,14 @@ Board instructions: [Waveshare](https://www.waveshare.com/wiki/RP2350-USB-A) ·
 
 </details>
 
+### Optional Waveshare enclosure
+
+Want to print a case for your **Waveshare RP2350-USB-A**?
+[Download the enclosure STL files](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases/download/enclosure-v2/Waveshare-Humanizer-Enclosure-v2.zip).
+The ZIP contains **Top_v2.stl** (top shell with the logo and B/R markings) and
+**Bottom_v2.stl** (bottom shell). This optional download is separate from the
+firmware packages; you don't need a printed case to use Humanizer.
+
 ### 3. Open Humanizer Studio
 
 Open **`Analog Gamepad Helper.html`** in Chrome or Edge, then click
