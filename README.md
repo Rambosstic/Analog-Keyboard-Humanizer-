@@ -17,13 +17,9 @@ unchanged.
 Set up your preferred button layout and analog output curve in your keyboard's
 own software, then save that setup to the keyboard before using Humanizer.
 
-**[Releases and downloads](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases)** ·
-**[Report a problem or share feedback](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/issues)**
+**[Download Humanizer v1.0.0](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases/download/v1.0.0/Humanizer-Studio-v1.0.0-Waveshare-RP2350-USB-A.zip)**
 
-**[Download Humanizer v1.0.0 for Waveshare RP2350-USB-A](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases/download/v1.0.0/Humanizer-Studio-v1.0.0-Waveshare-RP2350-USB-A.zip)**
-
-The ZIP includes the firmware, matching Humanizer Studio configurator, and PDF user guide.
-Optional enclosure STL files are a separate download below.
+For Waveshare RP2350-USB-A. Includes firmware, Humanizer Studio, and the PDF guide.
 
 ## What you'll need
 
@@ -55,9 +51,11 @@ That gives Humanizer's Circularity control the most room to shape the outer edge
 
 ### 2. Install the firmware
 
-Download the latest firmware release from **Releases** and extract the ZIP. Keep its
+Download the firmware package linked above and extract the ZIP. Keep its
 `.uf2` firmware and `Analog Gamepad Helper.html` together—use the configurator
 that came with the firmware you're installing.
+
+[All Releases / Previous Versions](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases)
 
 <details>
 <summary><strong>How to install the firmware</strong></summary>
@@ -228,7 +226,7 @@ USB data cable and that the board is running the current firmware. Close other
 applications or Studio tabs using its serial port before trying again.
 
 Found a bug? Open **Diagnostics → Report a bug** to visit our public
-[GitHub Issues page](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/issues).
+[Report a problem or share feedback](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/issues) page.
 Choose **New issue**, describe what happened and what you expected, and include
 your keyboard, build version, and settings if known.
 
