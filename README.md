@@ -17,7 +17,7 @@ unchanged.
 Set up your preferred button layout and analog output curve in your keyboard's
 own software, then save that setup to the keyboard before using Humanizer.
 
-**[Download Humanizer v1.0.0](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases/download/v1.0.0/Humanizer-Studio-v1.0.0-Waveshare-RP2350-USB-A.zip)**
+**[Download Humanizer v1.0.1](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases/download/v1.0.1/Humanizer-Studio-v1.0.1-Waveshare-RP2350-USB-A.zip)**
 
 For Waveshare RP2350-USB-A. Includes firmware, Humanizer Studio, and the PDF guide.
 
@@ -145,7 +145,7 @@ built into Studio and always available, even if you haven't saved any profiles.
 
 | Page | What to explore |
 | --- | --- |
-| **Response** | How smoothly the stick follows your presses and direction changes. Choose Exponential, Guarded Inertia, or Phase-Aware. |
+| **Response** | How smoothly the stick follows your presses and direction changes. Choose Exponential or Phase-Aware. |
 | **Return** | How smoothly it moves inward as you ease off the keys, including during a roll. It follows your selected Response model, with its own amount. |
 | **Circularity** | The shape of the outer edge. Turn **Apply Circularity** on to use it; lower values make the boundary rounder. |
 | **Angular Offset** | A little variation in the direction a movement starts. |
