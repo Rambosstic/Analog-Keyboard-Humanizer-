@@ -57,9 +57,6 @@ that came with the firmware you're installing.
 
 [All Releases / Previous Versions](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases)
 
-<details>
-<summary><strong>How to install the firmware</strong></summary>
-
 1. Connect the board's USB-C port to your PC using a data-capable cable.
 2. Enter its bootloader:
    Hold **BOOT**, tap and release **RESET**, then release BOOT.
@@ -72,8 +69,6 @@ The HTML configurator stays on your PC; it doesn't go onto the bootloader drive.
 Keep a copy of your previous working firmware when updating.
 
 Board instructions: [Waveshare RP2350-USB-A](https://www.waveshare.com/wiki/RP2350-USB-A).
-
-</details>
 
 ### Optional Waveshare enclosure
 
