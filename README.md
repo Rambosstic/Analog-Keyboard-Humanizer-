@@ -17,7 +17,7 @@ unchanged.
 Set up your preferred button layout and analog output curve in your keyboard's
 own software, then save that setup to the keyboard before using Humanizer.
 
-**[Download Humanizer v1.0.1](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases/download/v1.0.1/Humanizer-Studio-v1.0.1-Waveshare-RP2350-USB-A.zip)**
+**[Download Humanizer v1.0.2](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases/download/v1.0.2/Humanizer-Studio-v1.0.2-Waveshare-RP2350-USB-A.zip)**
 
 For Waveshare RP2350-USB-A. Includes firmware, Humanizer Studio, and the PDF guide.
 
@@ -225,8 +225,8 @@ came from the same release package. If the port chooser is empty, check the
 USB data cable and that the board is running the current firmware. Close other
 applications or Studio tabs using its serial port before trying again.
 
-Found a bug? Open **Diagnostics → Report a bug** to visit our public
-[Report a problem or share feedback](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/issues) page.
+Found a bug? Open **Diagnostics → Report A Bug** to visit our public
+[GitHub Issues page](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/issues).
 Choose **New issue**, describe what happened and what you expected, and include
 your keyboard, build version, and settings if known.
 
@@ -235,5 +235,5 @@ stick movement** can save a diagnostic JSON file. Drag that saved file into
 your issue's description or use GitHub's attachment button. You can report a
 problem without a recording; Studio doesn't upload anything automatically.
 
-Humanizer is still being refined. Feedback from real keyboards and real play
-helps shape where it goes next.
+Have feedback or a feature idea? Open **Diagnostics → Share Feedback / Suggest A Feature**
+to post or join a conversation in [GitHub Discussions → Ideas](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/discussions/categories/ideas).
