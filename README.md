@@ -17,9 +17,11 @@ unchanged.
 Set up your preferred button layout and analog output curve in your keyboard's
 own software, then save that setup to the keyboard before using Humanizer.
 
-**[Download Humanizer v1.0.2](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases/download/v1.0.2/Humanizer-Studio-v1.0.2-Waveshare-RP2350-USB-A.zip)**
+**[Download Humanizer v1.0](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases/download/v1.0/Humanizer-Studio-v1.0-Waveshare-RP2350-USB-A.zip)**
 
-For Waveshare RP2350-USB-A. Includes firmware, Humanizer Studio, and the PDF guide.
+For Waveshare RP2350-USB-A. Includes firmware, Humanizer Studio, and the PDF guide. [All Releases](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases) · [Report a problem or share feedback](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/issues)
+
+![Humanizer Studio with tuning controls and Live Preview](docs/user-guide/screenshots/overview.png)
 
 ## What you'll need
 
@@ -55,8 +57,6 @@ Download the firmware package linked above and extract the ZIP. Keep its
 `.uf2` firmware and `Analog Gamepad Helper.html` together—use the configurator
 that came with the firmware you're installing.
 
-[All Releases / Previous Versions](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases)
-
 1. Connect the board's USB-C port to your PC using a data-capable cable.
 2. Enter its bootloader:
    Hold **BOOT**, tap and release **RESET**, then release BOOT.
@@ -70,23 +70,23 @@ Keep a copy of your previous working firmware when updating.
 
 Board instructions: [Waveshare RP2350-USB-A](https://www.waveshare.com/wiki/RP2350-USB-A).
 
-### Optional Waveshare enclosure
-
-Want to print a case for your **Waveshare RP2350-USB-A**?
-[Download the enclosure STL files](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases/download/enclosure-v2/Waveshare-Humanizer-Enclosure-v2.zip).
-The ZIP contains **Top_v2.stl** (top shell with the logo and B/R markings) and
-**Bottom_v2.stl** (bottom shell). This optional download is separate from the
-firmware package; you don't need a printed case to use Humanizer.
-
 ### 3. Open Humanizer Studio
 
 Open **`Analog Gamepad Helper.html`** in Chrome or Edge. Studio runs from that
 local file; there's no account to create.
 
-Click **Link To Hardware**. If prompted, select **Humanizer Studio** and click
+Click **Link to hardware**. If prompted, select **Humanizer Studio** and click
 **Connect**.
 
 An adapter with no saved configuration starts with **Clean Slate**.
+
+### Optional Waveshare enclosure
+
+Want to print a case for your **Waveshare RP2350-USB-A**?
+[Download the enclosure STL files](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases/download/enclosure-v2/Waveshare-Humanizer-Enclosure-v2.zip).
+The ZIP contains **Top_v2.stl** (top shell with the logo and B/R markings) and
+**Bottom_v2.stl** (bottom shell). The firmware package works with or without the
+optional case.
 
 ### 4. Find your feel
 
@@ -104,7 +104,7 @@ the movement immediately. A useful first experiment is:
 Those values are just a starting point. More smoothing makes movement more
 gradual and takes longer to follow your changes.
 
-For a ready-made setup, open **Profiles → Browser Presets → Load A Preset**.
+For a ready-made setup, open **Profiles → Browser presets → Load a preset**.
 Under **Built-in presets**, choose **Suggested Starting Point** or
 **Guitar Pandas' Settings**, the author's personal setup. Both are included in
 Studio; you don't need to download a config file. Selecting one loads it.
@@ -121,7 +121,7 @@ Studio; you don't need to download a config file. Selecting one loads it.
 | Maximum Angular Offset | 2° |
 | Outward Arc / Return Arc | Up to 2° each |
 | Wander Amount / Speed | 10% each |
-| Thumb Emulation | On, Simple, Strength 5% |
+| Thumb Emulation | On, Simple, Strength 25% |
 
 Both presets are optional starting points. Try either one, then adjust to taste.
 
@@ -135,6 +135,10 @@ defaults, ready for when you choose to use them.
 
 You can load that same starting point from **Profiles → Clean Slate**. It's
 built into Studio and always available, even if you haven't saved any profiles.
+
+For a single tuning section, **Revert** restores that section from the active
+profile. **Turn off** removes that section's effect. Both leave the other
+sections alone and are also available in **All Tunings**.
 
 ## A quick tour of the tuning pages
 
@@ -160,13 +164,13 @@ When using either deflection-based mode, the Global smoothing slider is disabled
 **Thumb Emulation** has a Simple preset and six Advanced controls. Simple always
 uses its preset; Advanced brings back your custom values. Strong settings can
 make changes in direction or circle size take noticeably longer, so try small
-adjustments first. **Reset Thumb Emulation** resets just that section.
+adjustments first.
 
 ## See what your settings are doing
 
 **Live Preview** shows the keyboard's incoming stick movement and Humanizer's
 processed output. View them together, side by side, or show processed movement
-alone. Expand the preview or pop it into its own window when you want more space.
+alone. Use **Expand preview** when you want more space.
 
 In **Preview appearance**, choose colors, lines, dashes or dots, thickness,
 opacity, and trail fade. These change the view, not your movement settings.
@@ -183,7 +187,7 @@ Humanizer processes it.
 
 ## Keep a setup you like
 
-- **Save To Device** stores your entire current configuration in the Waveshare's
+- **Save to device** stores your entire current configuration in the Waveshare's
   onboard memory, including any changes you've made. Once saved, you can close
   Studio. The Waveshare keeps using those settings, including after unplugging
   and reconnecting; the configurator does not need to stay open.
@@ -191,21 +195,15 @@ Humanizer processes it.
 - **Browser presets** in Profiles are handy for keeping named setups in the
   same browser on the same computer. Clearing browser data can remove them,
   and they may not follow you to another browser or copy of Studio.
-- **JSON config files** are your portable backups. Under **Profiles → Config
-  files**, choose **Save config** to pick a filename and location. Keep a JSON
-  copy of any setup you want to keep, even if you also save it in your browser.
-  You can back it up alongside your other files, move it to another computer,
-  or share it with friends and other users. Choose **Load config** to open one.
-
-**Keep a JSON backup of every setup you want to keep.** Browser presets are
-convenient, but clearing browsing data can erase your saved presets. A JSON
-file kept in a safe folder lets you restore your setup or share it with others.
+- **JSON config files** are portable backups. In **Profiles → Config files**,
+  choose **Save config** to keep a copy you can restore, move to another computer,
+  or share. Choose **Load config** to open one.
 
 Loading a preset or JSON config does not save it to the Waveshare. Choose
-**Save To Device** when you're happy with the current configuration.
+**Save to device** when you're happy with the current configuration.
 
-**To change your setup later:** reopen Studio, click **Link To Hardware** if
-it hasn't already linked, make your changes, then click **Save To Device**
+**To change your setup later:** reopen Studio, click **Link to hardware** if
+it hasn't already linked, make your changes, then click **Save to device**
 again. You can close Studio once the settings are saved.
 
 ## Need a hand?
