@@ -19,7 +19,7 @@ own software, then save that setup to the keyboard before using Humanizer.
 
 **[Download Humanizer v1.0](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases/download/v1.0/Humanizer-Studio-v1.0-Waveshare-RP2350-USB-A.zip)**
 
-For Waveshare RP2350-USB-A. Includes firmware, Humanizer Studio, and the PDF guide. [All Releases](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases) · [Report a problem or share feedback](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/issues)
+For Waveshare RP2350-USB-A. Includes firmware, Humanizer Studio, and the PDF guide. [Watch the Video Guide](https://youtu.be/y3IP-UFUWn0) · [All Releases](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/releases) · [Report a problem or share feedback](https://github.com/Rambosstic/Analog-Keyboard-Humanizer-/issues)
 
 ![Humanizer Studio with tuning controls and Live Preview](docs/user-guide/screenshots/overview.png)
 
@@ -37,6 +37,8 @@ The connection is simple:
 **Keyboard → board's USB-A port → board's USB-C port → PC**
 
 ## Get started
+
+Prefer a walkthrough? [Watch the setup and tuning video guide on YouTube](https://youtu.be/y3IP-UFUWn0).
 
 ### 1. Set up your keyboard
 
