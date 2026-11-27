@@ -12,7 +12,8 @@ as you tune.
 
 It works with the keyboard's existing **XInput left-stick output**. Your analog
 key depth still matters. Buttons, triggers, and the right stick pass through
-unchanged.
+unchanged. Normal keyboard input also passes through when your keyboard sends
+it alongside XInput.
 
 Set up your preferred button layout and analog output curve in your keyboard's
 own software, then save that setup to the keyboard before using Humanizer.
@@ -55,11 +56,13 @@ That gives Humanizer's Circularity control the most room to shape the outer edge
 
 ### Using XIM MATRIX
 
-In your keyboard's software, map only your movement keys to the **XInput left
-stick**. If available, set **Keyboard Output** to **Mute mapped keys only**.
-This keeps those movement keys from also sending letters and leaves the other
-keys available as keyboard inputs. Bind the rest of your controls in
-**MATRIX Manager**.
+With keyboard passthrough, you can map just your movement keys to the **XInput
+left stick** and bind the remaining keys directly in **MATRIX Manager**. If your
+keyboard software offers **Mute mapped keys only**, select it so movement keys
+don't also type letters.
+
+You can still map controller buttons, triggers, and the right stick in your
+keyboard's own software. Both approaches work.
 
 ### 2. Install the firmware
 
