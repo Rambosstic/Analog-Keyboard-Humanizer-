@@ -53,6 +53,14 @@ receives that stick movement, so you can use a different key layout if you prefe
 **If your keyboard offers square or circular stick output, choose square.**
 That gives Humanizer's Circularity control the most room to shape the outer edge.
 
+### Using XIM MATRIX
+
+In your keyboard's software, map only your movement keys to the **XInput left
+stick**. If available, set **Keyboard Output** to **Mute mapped keys only**.
+This keeps those movement keys from also sending letters and leaves the other
+keys available as keyboard inputs. Bind the rest of your controls in
+**MATRIX Manager**.
+
 ### 2. Install the firmware
 
 Download the firmware package linked above and extract the ZIP. Keep its
